@@ -11,11 +11,11 @@ set(CMAKE_CXX_COMPILER ${tools}/bin/${cross}g++)
 
 # Define the sysroot path for the RaspberryPi distribution
 set(rpi_root "/mnt/nfs")
-set(CMAKE_FIND_ROOT_PATH ${rpi_root})
+set(CMAKE_FIND_ROOT_PATH "${rpi_root}")
 set(BOOST_LIBRARYDIR "${rpi_root}/usr/lib/arm-linux-gnueabihf")
 
-# Don't set this
-#set(CMAKE_SYSROOT /mnt/nfs)
+# Don't set this!
+#set(CMAKE_SYSROOT "${rpi_root}")
 
 # Not sure if we really need to set this...
 set(CMAKE_STAGING_PREFIX /home/steve/Development/pibuild)
