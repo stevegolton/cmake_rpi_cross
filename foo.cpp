@@ -7,11 +7,13 @@ using namespace std;
 
 void print(const boost::system::error_code& /*e*/, boost::asio::deadline_timer* t, int* count)
 {
-	std::cout << "Hello, world!" << std::endl;
+	std::cout << "Hello, world!" << *count << std::endl;
 
 	t->expires_at(t->expires_at() + boost::posix_time::seconds(1));
     t->async_wait(boost::bind(print,
           boost::asio::placeholders::error, t, count));
+
+	(*count) ++;
 }
 
 int main()

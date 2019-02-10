@@ -5,24 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "Remote Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/foo",
+            "miDebuggerPath": "/home/steve/x-tools/armv6-rpi-linux-gnueabi/bin/armv6-rpi-linux-gnueabi-gdb",
+            "program": "${workspaceFolder}/build-arm/foo",
             "miDebuggerServerAddress": "pihole.lan:1234",
+            "additionalSOLibSearchPath": "/mnt/nfs",
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ]
+            "preLaunchTask": "run_gdbserver"
         }
     ]
 }
