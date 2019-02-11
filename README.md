@@ -12,7 +12,7 @@
 - Either copy the rootfs from target to local machine or mount root as nfs.
 
 ## Building the example boost application
-- `cmake -DCMAKE_SYSTEM_NAME=../toolchain-rpi.cmake ..`
+- `cmake -DCMAKE_TOOLCHAIN_FILE=../toolchain-rpi.cmake ..`
 
 ## TODO: Debugging from VS code todo and eclipse
 ## TODO: Emulating the RPi
